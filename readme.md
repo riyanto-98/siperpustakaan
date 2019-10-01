@@ -1,6 +1,10 @@
 # Perpustakaan App
 sistem informasi berfungsi untuk melakukan peminjaman buku secara online
 
+# User 
+    * Admin
+    * User 
+
 # web
 Fitur dari web Mahasiswa  app ini adalah
 1. login
