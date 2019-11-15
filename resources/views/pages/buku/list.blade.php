@@ -19,8 +19,8 @@
     </section>
     <section class="content">
         @if ($message = session("info"))
-            <div class="alert alert-success">
-                <i class="fa fa-info-circle"></i> {{ $message }}
+            <div class="alert alert-success"> 
+                <i class="fa fa-info-circle"></i> {{ $message }} 
             </div>
         @endif
         <div class="card">
