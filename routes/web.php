@@ -22,3 +22,11 @@ Route::get('listbuku', function () {
 Route::get('formbuku', function () {
     return view('pages.buku.form');
 });
+
+Route::get('permintaan', function () {
+    return view('pages.peminjaman.permintaan');
+});
+
+Route::get('listpinjam', function () {
+    return view('pages.peminjaman.listpinjam');
+});

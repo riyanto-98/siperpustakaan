@@ -57,9 +57,16 @@
                     <a href="pages/widgets.html" class="nav-link">
                         <i class="nav-icon fas fa-briefcase"></i>
                         <p>
-                            Assign Kerja
+                            Peminjaman
                         </p>
                     </a>
+                    <li class="nav-item">
+                            <a href="permintaan" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Permintaan</p>
+                            </a>
+                        </li>
+
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">

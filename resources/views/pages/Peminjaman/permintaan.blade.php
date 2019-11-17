@@ -28,33 +28,24 @@
                 <h3 class="card-title">List Buku</h3>
             </div>
             <div class="card-body">
-                <div class="float-right mb-2">
-                    <a href="formbuku" class="btn btn-success">
-                        <i class="fa fa-plus"></i> Tambah</a>
-                </div>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama Buku</th>
-                            <th>Nama Pengarang</th>
-                            <th>Penerbit</th> 
-                            <th>Genre</th>
-                            <th>Jumlah</th>
-                            <th colspan=3>Action</th>
+                            <th>Id</th>
+                            <th>Nama</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                            
                         </tr>
                     </thead>
                     <thead>
-                        <tr>
-                            <td>1</td>
-                            <td>Matematika</td>
-                            <td>Ryan</td>
-                            <td>Erlangga</td> 
-                            <td>Sains & MateMatika</td>
-                            <td>50</td>
+                        <tr >
+                            <td>123911</td>
+                            <td><a href="listpinjam" >Agus</td>
+                            <td>Di Ambil</td>
                             <th colspan=3 >
-                                <button type="button" class="btn btn-info">Edit</button>
-                                <button type="button" class="btn btn-danger">Hapus</button>
+                                    <button type="button" class="btn btn-info">Selesai</button>
+                                    <button type="button" class="btn btn-danger">Cancel</button>
                             </th>
                         </tr>
                     </thead>
