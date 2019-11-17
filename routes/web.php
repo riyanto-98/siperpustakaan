@@ -23,10 +23,10 @@ Route::get('formbuku', function () {
     return view('pages.buku.form');
 });
 
-Route::get('permintaan', function () {
-    return view('pages.peminjaman.permintaan');
+Route::get('datapinjam', function () {
+    return view('pages.pinjaman.datapinjam');
 });
 
 Route::get('listpinjam', function () {
-    return view('pages.peminjaman.listpinjam');
+    return view('pages.pinjaman.listpinjam');
 });

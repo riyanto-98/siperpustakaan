@@ -51,23 +51,43 @@
                                 <p>Staff</p>
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fas fa-briefcase"></i>
-                        <p>
-                            Peminjaman
-                        </p>
-                    </a>
-                    <li class="nav-item">
-                            <a href="permintaan" class="nav-link">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Permintaan</p>
+                                <p>Member</p>
                             </a>
                         </li>
-
+                    </ul>
                 </li>
+                <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-pen"></i>
+                            <p>
+                                Pinjaman 
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="listbuku" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Permintaan</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="datapinjam" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Peminjam</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Staff</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-file"></i>

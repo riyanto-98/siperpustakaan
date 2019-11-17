@@ -31,13 +31,10 @@
                     <table style="height: 100px;">
                             <tbody>
                               <tr>
-                                <td >ID : agus</td>                              
+                                <td >ID Member: 1234</td>                              
                               </tr>
                               <tr>
                                 <td >Nama : agus</td>
-                              </tr>
-                              <tr>
-                                  <td>Tgl Pinjam : 12-12-19</td>
                               </tr>
                             </tbody>
                     </table>
@@ -47,41 +44,42 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>ID Buku</th>
+                                <th>No.Pinjam</th>
                                 <th>Nama Buku</th> 
-                                <th>Genre</th>
+                                <th>Tgl Pinjam</th>
+                                <th>Tgl Kembali</th>
+                                <th>Telat</th>
+                                <th>Kembali</th>
+                                <th>Perpanjang</th>
                             </tr>
                         </thead>
                         <thead>
                             <tr>
-                                <td>1</td>
                                 <td>9090</td>
                                 <td>Matematika</td>
-                                <td>Sains & MateMatika</td>
+                                <td>12-1-19</td>
+                                <td>19-1-19</td>
+                                <td>0 Hari</td>
+                                <td><button type="button" class="btn btn-info">Kembali</button></td>
+                                <td><button type="button" class="btn btn-success">Perpanjang</button></td>
                             </tr>
                         </thead>
                         <thead>
-                                <tr>
-                                    <td>2</td>
-                                    <td>9094</td>
-                                    <td>Ipa</td>
-                                    <td>Sains & MateMatika</td>
-                                </tr>
-                            </thead>
-                            <thead>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>9040</td>
-                                        <td>fisika</td>
-                                        <td>Sains & MateMatika</td>
-                                    </tr>
-                                </thead>
+                            <tr>
+                                <td>9091</td>
+                                <td>Fisika</td>
+                                <td>12-1-19</td>
+                                <td>19-1-19</td>
+                                <td>0 Hari</td>
+                                <td><button type="button" class="btn btn-info">Kembali</button></td>
+                                <td><button type="button" class="btn btn-success">Perpanjang</button></td>
+                            </tr>
+                        </thead>
                     </table>
-                    <div class="row mt-2">
-                        <button type="button" class="btn btn-info">Selesai</button>
-                        <div class="row ml-2">
-                            <button type="button" class="btn btn-danger">Cancel</button>
+                    <div class="row mt-2 , row ml-3">
+                        <a href="permintaan">
+                            <button type="button" class="btn btn-danger">Back</button>
+                        </a>
                     </div>
                     </div>
                     
