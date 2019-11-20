@@ -36,8 +36,15 @@
                                 <input type="text" class="form-control" id="namapengarang" >
                             </div>
                             <div class="form-group">
-                                    <label for="penerbit">Penerbit</label>
-                                    <input type="text" class="form-control" id="penerbit" >
+                                    <label for="kategori">Penerbit</label>
+                                    <select class="form-control" id="kategori">
+                                      <option>Erlangga</option>
+                                      <option>Filsafat & Psiologi</option>
+                                      <option>Agama</option>
+                                      <option>Sosial</option>
+                                      <option>Bahasa</option>
+                                      <option>Sains & Matematika</option>
+                                    </select>
                             </div>
                             <div class="form-group">
                                     <label for="kategori">Genre</label>

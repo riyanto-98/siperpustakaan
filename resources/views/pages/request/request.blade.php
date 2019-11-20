@@ -7,7 +7,7 @@
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-6"><h1>Buku</h1></div>
+                <div class="col-6"><h1>Request</h1></div>
                 <div class="col-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -25,24 +25,37 @@
         @endif
         <div class="card">
             <div class="card-header bg-primary text-white">
-                <h3 class="card-title">List Peminjam</h3>
+                <h3 class="card-title">Permintan</h3>
             </div>
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Nama</th>                            
+                            <th>Nama</th> 
+                            <th>Status</th> 
+                            <th >Action</th>                          
                         </tr>
                     </thead>
                     <thead>
                         <tr >
                             <td>123911</td>
-                            <td><a href="listpinjam" >Agus</td>
+                            <td><a href="listrequest" >Agus</td>
+                            <td>Belum Diambil</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Di Ambil</button>
+                                <button type="button" class="btn btn-danger">Batal</button>
+                            </td>
                         </tr>
                         <tr >
                             <td>123912</td>
-                            <td><a href="listpinjam" >bambang</ btd>
+                            <td><a href="#" >bambang</td>
+                            <td>Sudah Diambil</td>
+                            <td>
+                                <button type="button" class="btn btn-success">Di Ambil</button>
+                                <button type="button" class="btn btn-danger">Batal</button>
+                            </td>
+                            
                         </tr>
                     </thead>
                 </table>

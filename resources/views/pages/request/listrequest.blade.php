@@ -31,10 +31,10 @@
                     <table style="height: 100px;">
                             <tbody>
                               <tr>
-                                <td >ID Member: 1234</td>                              
+                                <td >ID Member: 123911</td>                              
                               </tr>
                               <tr>
-                                <td >Nama : agus</td>
+                                <td >Nama : Agus</td>
                               </tr>
                             </tbody>
                     </table>
@@ -48,9 +48,6 @@
                                 <th>Nama Buku</th> 
                                 <th>Tgl Pinjam</th>
                                 <th>Tgl Kembali</th>
-                                <th>Telat</th>
-                                <th>Kembali</th>
-                                <th>Perpanjang</th>
                             </tr>
                         </thead>
                         <thead>
@@ -59,27 +56,27 @@
                                 <td>Matematika</td>
                                 <td>12-1-19</td>
                                 <td>19-1-19</td>
-                                <td>0 Hari</td>
-                                <td><button type="button" class="btn btn-info">Kembali</button></td>
-                                <td><button type="button" class="btn btn-success">Perpanjang</button></td>
                             </tr>
                         </thead>
                         <thead>
                             <tr>
-                                <td>9091</td>
-                                <td>Fisika</td>
-                                <td>12-1-19</td>
-                                <td>19-1-19</td>
-                                <td>0 Hari</td>
-                                <td><button type="button" class="btn btn-info">Kembali</button></td>
-                                <td><button type="button" class="btn btn-success">Perpanjang</button></td>
+                                    <td>9091</td>
+                                    <td>Fisika</td>
+                                    <td>12-1-19</td>
+                                    <td>19-1-19</td>
                             </tr>
                         </thead>
                     </table>
-                    <div class="row mt-2 , row ml-3">
-                        <a href="datapinjam">
-                            <button type="button" class="btn btn-danger">Back</button>
+                    <div class="row mt-2 , row ml-1">
+                        <a href="request">
+                           <button type="button" class="btn btn-success">Siap</button> 
                         </a>
+                    <div class="row ml-1">
+                        <a href="request">
+                          <button type="button" class="btn btn-danger">Back</button>
+                        </a>
+                    </div>
+                        
                     </div>
                     </div>
                     
