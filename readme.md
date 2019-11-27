@@ -2,7 +2,6 @@
 # ERD
 ![ERD SIPerpustakaan](erd-perpustakaan.png)
 
-=======
 
 # Perpustakaan App
 sistem informasi berfungsi untuk melakukan peminjaman buku secara online
