@@ -12,6 +12,7 @@
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('pages.login');
 });
 
@@ -70,3 +71,7 @@ Route::get('listmember', function () {
 Route::get('formmember', function () {
     return view('pages.member.form');
 });
+=======
+    return view('welcome');
+});
+>>>>>>> 161d2da2067d2fae752b3526805b9b240e52ecbc
