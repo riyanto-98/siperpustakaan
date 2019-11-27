@@ -1,6 +1,6 @@
 
 # ERD
-![ERD SIPerpustakaan](erd-perpustakaan.png)
+![ERD SIPerpustakaan](erd-pustaka.png)
 
 
 # Perpustakaan App
