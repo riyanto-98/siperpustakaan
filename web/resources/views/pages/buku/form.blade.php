@@ -1,13 +1,13 @@
 @extends('main')
 
-@section('title','Form Buku')
+@section('title','Form Dept')
 
 @section('content')
 <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-6"><h1>Buku</h1></div>
+                    <div class="col-6"><h1>Buku </h1></div>
                     
                 </div>
             </div>
@@ -18,7 +18,14 @@
                     <h3 class="card-title">Form Buku</h3>
                 </div>
                 <div class="card-body">
-                        <form>
+                        <form action={{ isset($data)
+                            ?route("buku.update",[$data->id])
+                            :route("buku.store") }}
+            method="POST" autocomplete="off">
+            @csrf
+            @if (isset($data))
+                @method("PUT")
+            @endif>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Photo Buku</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
@@ -36,8 +43,8 @@
                                 <input type="text" class="form-control" id="namapengarang" >
                             </div>
                             <div class="form-group">
-                                    <label for="kategori">Penerbit</label>
-                                    <select class="form-control" id="kategori">
+                                    <label for="penerbit">Penerbit</label>
+                                    <select class="form-control" id="penerbit">
                                       <option>Erlangga</option>
                                       <option>Filsafat & Psiologi</option>
                                       <option>Agama</option>
@@ -47,8 +54,8 @@
                                     </select>
                             </div>
                             <div class="form-group">
-                                    <label for="kategori">Genre</label>
-                                    <select class="form-control" id="kategori">
+                                    <label for="genre">Genre</label>
+                                    <select class="form-control" id="genre">
                                       <option>Umum</option>
                                       <option>Filsafat & Psiologi</option>
                                       <option>Agama</option>
@@ -58,8 +65,8 @@
                                     </select>
                             </div>
                             <div class="form-group">
-                                <label for="penerbit">Jumlah</label>
-                                <input type="text" class="form-control" id="penerbit" >
+                                <label for="jumlah">Jumlah</label>
+                                <input type="text" class="form-control" id="jumlah" >
                             </div>
                             <div class="form-group float-right">
                                     <button type="submit" class="btn btn-success">

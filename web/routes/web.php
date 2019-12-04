@@ -23,7 +23,13 @@ Route::get('register', function () {
     return view('pages.register');
 });
 
-Route::resource('buku', 'BukuController');
+Route::get('listbuku', function () {
+    return view('pages.buku.list');
+});
+
+Route::get('formbuku', function () {
+    return view('pages.buku.form');
+});
 
 Route::get('datapinjam', function () {
     return view('pages.pinjaman.datapinjam');
@@ -63,7 +69,4 @@ Route::get('listmember', function () {
 
 Route::get('formmember', function () {
     return view('pages.member.form');
-
-    return view('welcome');
 });
-    
