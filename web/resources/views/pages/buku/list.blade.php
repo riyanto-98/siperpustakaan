@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','List Staff')
+@section('title','List Buku')
 
 @section('content')
 <div class="content-wrapper">

@@ -12,7 +12,6 @@
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('pages.login');
 });
 
@@ -24,13 +23,7 @@ Route::get('register', function () {
     return view('pages.register');
 });
 
-Route::get('listbuku', function () {
-    return view('pages.buku.list');
-});
-
-Route::get('formbuku', function () {
-    return view('pages.buku.form');
-});
+Route::resource('buku', 'BukuController');
 
 Route::get('datapinjam', function () {
     return view('pages.pinjaman.datapinjam');
@@ -70,8 +63,7 @@ Route::get('listmember', function () {
 
 Route::get('formmember', function () {
     return view('pages.member.form');
-});
-=======
+
     return view('welcome');
 });
->>>>>>> 161d2da2067d2fae752b3526805b9b240e52ecbc
+    

@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','Form Dept')
+@section('title','Form Buku')
 
 @section('content')
 <div class="content-wrapper">
