@@ -3,14 +3,14 @@
 @section('content')
 <div class="login-box">
     <div class="login-logo">
-        <a href="#{{ url("/") }}"><b>SIP</b>er</a>
+        <a href="{{ url("/") }}"><b>SI</b>Perpus</a>
     </div>
     <!-- /.login-logo -->
     <div class="card">
         <div class="card-body login-card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="login" method="">
+            <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="email" name="email"
@@ -53,7 +53,7 @@
                     </div>
                     <!-- /.col -->
                     <div class="col-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat"><a href="{{route('login')}}"></a> Sign In</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                     </div>
                     <!-- /.col -->
                 </div>
@@ -63,7 +63,7 @@
                 <a href="#">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="register" class="text-center">Register a new membership</a>
+                <a href="{{ route("register") }}" class="text-center">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->

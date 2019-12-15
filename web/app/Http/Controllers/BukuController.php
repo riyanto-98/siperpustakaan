@@ -41,8 +41,6 @@ class BukuController extends Controller
         $request->validate([
             "namabuku" => "required|max:100",
             "namapengarang" => "required|max:100",
-            "penerbit" => "required|max:100",
-            "genre" => "required|max:100",
             "jumlah" => "required|max:100",
 
 
@@ -63,7 +61,8 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        $data = Buku::paginate(10);
+        $data = Buku::find($id);
+        
         return view("pages.buku.list",compact("data"));
     }
 
@@ -85,7 +84,7 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Buku $buku)
     {
         $request->validate([
             "namabuku" => "required|max:100",
@@ -111,7 +110,7 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Buku $buku)
     {
         Buku::destroy("id",$buku->id);
 

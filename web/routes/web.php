@@ -15,21 +15,25 @@ Route::get('/', function () {
     return view('pages.login');
 });
 
-Route::get('login', function () {
-    return view('pages.dashboard');
-})->name("login");
+Auth::routes();
 
-Route::get('register', function () {
+Route::middleware("auth")->group(function () {
+    Route::get('/home', function () {
+        return view ('pages.dashboard');
+
+    })->name("home");
+
+    Route::resource('buku', 'BukuController');
+
+});
+
+Route::get("/login",function(){
+    return view('pages.login');
+})->name("login")->middleware("guest");
+
+Route::get("/register",function(){
     return view('pages.register');
-});
-
-Route::get('listbuku', function () {
-    return view('pages.buku.list');
-});
-
-Route::get('formbuku', function () {
-    return view('pages.buku.form');
-});
+})->name("register")->middleware("guest");
 
 Route::get('datapinjam', function () {
     return view('pages.pinjaman.datapinjam');
