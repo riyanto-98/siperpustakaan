@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Buku;
+use App\Genre;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,10 @@ class BukuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-        {
-            $data = Buku::paginate(10);
-            return view("pages.buku.list",compact("data"));
-            }
+    {
+        $data = Genre::paginate(10);
+        return view("pages.genre.list",compact("data"));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -25,8 +25,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
-        return view("pages.buku.form");
+        return view("pages.genre.form");
     }
 
     /**
@@ -37,20 +36,15 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
+            "genre" => "required|max:100",
         ]);
 
-        Buku::create($request->except("_token"));
+        Genre::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Tambah Buku");
+        $request->session()->flash("info","Berhasil Tambah Penerbit");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("genre.index");
     }
 
     /**
@@ -61,9 +55,8 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        $data = Buku::find($id);
-        
-        return view("pages.buku.list",compact("data"));
+        $data = Genre::find($id);
+        return view("pages.genre.list",compact("data"));
     }
 
     /**
@@ -84,24 +77,17 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request,Genre $genre)
     {
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "penerbit" => "required|max:100",
             "genre" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
         ]);
 
-        Buku::where("id",$buku->id)
-                ->update($request->except(["_token","_method"]));
+        Genre::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Rubah Data Buku");
+        $request->session()->flash("info","Berhasil Rubah Penerbit");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("genre.index");
     }
 
     /**
@@ -110,11 +96,11 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy(Genre $genre)
     {
-        Buku::destroy("id",$buku->id);
+        Genre::destroy("id",$genre->id);
 
-        return redirect()->route("buku.index")
-            ->with("info","Berhasil Hapus Data Buku");
+        return redirect()->route("genre.index")
+            ->with("info","Berhasil Hapus Data Penerbit");
     }
 }

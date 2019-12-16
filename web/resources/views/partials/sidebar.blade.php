@@ -34,25 +34,25 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="listbuku" class="nav-link">
+                            <a href="{{ route("buku.index") }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Buku</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="listpenerbit" class="nav-link">
+                            <a href="{{ route("penerbit.index") }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Penerbit</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                                <a href="listgenre" class="nav-link">
+                                <a href="{{ route("genre.index") }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Genre</p>
                                 </a>
                             </li>
                         <li class="nav-item">
-                            <a href="listmember" class="nav-link">
+                            <a href="{{ route("member.index") }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Member</p>
                             </a>

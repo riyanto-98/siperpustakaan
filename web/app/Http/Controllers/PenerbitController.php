@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Buku;
+use App\Penerbit;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class PenerbitController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,11 @@ class BukuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-        {
-            $data = Buku::paginate(10);
-            return view("pages.buku.list",compact("data"));
+    {
+        $data = Penerbit::paginate(10);
+            return view("pages.penerbit.list",compact("data"));
             }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -25,8 +26,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
-        return view("pages.buku.form");
+        return view("pages.penerbit.form");
     }
 
     /**
@@ -37,20 +37,15 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
+            "penerbit" => "required|max:100",
         ]);
 
-        Buku::create($request->except("_token"));
+        Penerbit::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Tambah Buku");
+        $request->session()->flash("info","Berhasil Tambah Penerbit");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("penerbit.index");
     }
 
     /**
@@ -61,9 +56,8 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        $data = Buku::find($id);
-        
-        return view("pages.buku.list",compact("data"));
+        $data = Penerbit::find($id);
+        return view("pages.penerbit.list",compact("data"));
     }
 
     /**
@@ -84,24 +78,17 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request, Penerbit $penerbit)
     {
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "penerbit" => "required|max:100",
-            "genre" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
+            "penerbit" => "required|max:100"
         ]);
 
-        Buku::where("id",$buku->id)
-                ->update($request->except(["_token","_method"]));
+        Penerbit::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Rubah Data Buku");
+        $request->session()->flash("info","Berhasil Rubah Penerbit");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("penerbit.index");
     }
 
     /**
@@ -110,11 +97,11 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy(Penerbit $penerbit)
     {
-        Buku::destroy("id",$buku->id);
+        Penerbit::destroy("id",$penerbit->id);
 
-        return redirect()->route("buku.index")
-            ->with("info","Berhasil Hapus Data Buku");
+        return redirect()->route("penerbit.index")
+            ->with("info","Berhasil Hapus Data Penerbit");
     }
 }

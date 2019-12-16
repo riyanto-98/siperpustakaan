@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Buku;
+use App\Member;
 use Illuminate\Http\Request;
 
-class BukuController extends Controller
+class MemberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,11 @@ class BukuController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-        {
-            $data = Buku::paginate(10);
-            return view("pages.buku.list",compact("data"));
-            }
+    {
+        $data = Member::paginate(10);
+        return view("pages.member.list",compact("data"));
+            
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -25,8 +26,7 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
-        return view("pages.buku.form");
+        return view("pages.member.form");
     }
 
     /**
@@ -37,20 +37,19 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
+            "nama"   => "required|max:100",
+            "nim"    => "required|max:100",
+            "alamat" => "required|max:100",
+            "no"     => "required|max:100",
+            "email" => "required|max:100",
         ]);
 
-        Buku::create($request->except("_token"));
+        Member::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Tambah Buku");
+        $request->session()->flash("info","Berhasil Tambah Member");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("member.index");
     }
 
     /**
@@ -61,9 +60,8 @@ class BukuController extends Controller
      */
     public function show($id)
     {
-        $data = Buku::find($id);
-        
-        return view("pages.buku.list",compact("data"));
+        $data = Member::find($id);
+        return view("pages.member.list",compact("data"));
     }
 
     /**
@@ -84,24 +82,21 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request, Member $member)
     {
         $request->validate([
-            "namabuku" => "required|max:100",
-            "namapengarang" => "required|max:100",
-            "penerbit" => "required|max:100",
-            "genre" => "required|max:100",
-            "jumlah" => "required|max:100",
-
-
+            "nama"   => "required|max:100",
+            "nim"    => "required|max:100",
+            "alamat" => "required|max:100",
+            "no"     => "required|max:100",
+            "email" => "required|max:100",
         ]);
 
-        Buku::where("id",$buku->id)
-                ->update($request->except(["_token","_method"]));
+        Member::create($request->except("_token"));
 
-        $request->session()->flash("info","Berhasil Rubah Data Buku");
+        $request->session()->flash("info","Berhasil Rubah Member");
 
-        return redirect()->route("buku.index");
+        return redirect()->route("member.index");
     }
 
     /**
@@ -110,11 +105,11 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy(Member $member)
     {
-        Buku::destroy("id",$buku->id);
+        Member::destroy("id",$member->id);
 
-        return redirect()->route("buku.index")
-            ->with("info","Berhasil Hapus Data Buku");
+        return redirect()->route("member.index")
+            ->with("info","Berhasil Hapus Data Member");
     }
 }
