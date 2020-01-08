@@ -56,7 +56,11 @@ class GenreController extends Controller
     public function show($id)
     {
         $data = Genre::find($id);
+<<<<<<< HEAD
         return view("pages.genre.form",compact("data"));
+=======
+        return view("pages.genre.list",compact("data"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     }
 
     /**
@@ -77,16 +81,26 @@ class GenreController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function update(Request $request,$id)
+=======
+    public function update(Request $request,Genre $genre)
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     {
         $request->validate([
             "genre" => "required|max:100",
         ]);
 
+<<<<<<< HEAD
         Genre::where("id",$id)
                 ->update($request->except(["_token","_method"]));
 
         $request->session()->flash("info","Berhasil Rubah Genre");
+=======
+        Genre::create($request->except("_token"));
+
+        $request->session()->flash("info","Berhasil Rubah Penerbit");
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
 
         return redirect()->route("genre.index");
     }

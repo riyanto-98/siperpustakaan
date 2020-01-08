@@ -34,7 +34,11 @@
 
                             <div class="form-group">
                                 <label for="genre">Genre</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" name="genre" value='{{ isset($data)?$data->genre:old("genre") }}'>
+=======
+                                <input type="text" class="form-control" name="genre">
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
                             </div>
                             <div class="form-group float-right">
                                     <button type="submit" class="btn btn-success">

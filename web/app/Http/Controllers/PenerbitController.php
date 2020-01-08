@@ -57,7 +57,11 @@ class PenerbitController extends Controller
     public function show($id)
     {
         $data = Penerbit::find($id);
+<<<<<<< HEAD
         return view("pages.penerbit.form",compact("data"));
+=======
+        return view("pages.penerbit.list",compact("data"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     }
 
     /**
@@ -78,14 +82,22 @@ class PenerbitController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function update(Request $request, $id)
+=======
+    public function update(Request $request, Penerbit $penerbit)
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     {
         $request->validate([
             "penerbit" => "required|max:100"
         ]);
 
+<<<<<<< HEAD
         Penerbit::where("id",$id)
                 ->update($request->except(["_token","_method"]));
+=======
+        Penerbit::create($request->except("_token"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
 
         $request->session()->flash("info","Berhasil Rubah Penerbit");
 

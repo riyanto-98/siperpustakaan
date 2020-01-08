@@ -63,7 +63,11 @@ class BukuController extends Controller
     {
         $data = Buku::find($id);
         
+<<<<<<< HEAD
         return view("pages.buku.form",compact("data"));
+=======
+        return view("pages.buku.list",compact("data"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     }
 
     /**
@@ -84,7 +88,11 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function update(Request $request,$id)
+=======
+    public function update(Request $request, Buku $buku)
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     {
         $request->validate([
             "namabuku" => "required|max:100",

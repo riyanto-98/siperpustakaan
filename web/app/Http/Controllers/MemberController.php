@@ -61,7 +61,11 @@ class MemberController extends Controller
     public function show($id)
     {
         $data = Member::find($id);
+<<<<<<< HEAD
         return view("pages.member.form",compact("data"));
+=======
+        return view("pages.member.list",compact("data"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     }
 
     /**
@@ -82,18 +86,29 @@ class MemberController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function update(Request $request,$id)
+=======
+    public function update(Request $request, Member $member)
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
     {
         $request->validate([
             "nama"   => "required|max:100",
             "nim"    => "required|max:100",
             "alamat" => "required|max:100",
             "no"     => "required|max:100",
+<<<<<<< HEAD
             "email" => "required|max:100"
         ]);
 
         Member::where("id",$id)
         ->update($request->except(["_token","_method"]));
+=======
+            "email" => "required|max:100",
+        ]);
+
+        Member::create($request->except("_token"));
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
 
         $request->session()->flash("info","Berhasil Rubah Member");
 

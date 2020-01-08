@@ -33,6 +33,7 @@
 
                             <div class="form-group">
                                 <label for="nama">Nama</label>
+<<<<<<< HEAD
                                 <input type="text" class="form-control" name="nama" value='{{ isset($data)?$data->nama:old("nama") }}'>
                             </div>
                             <div class="form-group">
@@ -46,6 +47,21 @@
                             <div class="form-group">
                                 <label for="no">No.Hp</label>
                                 <input type="text" class="form-control" name="no" value='{{ isset($data)?$data->no:old("no") }}' >
+=======
+                                <input type="text" class="form-control" name="nama">
+                            </div>
+                            <div class="form-group">
+                                <label for="nim">NIM</label>
+                                <input type="text" class="form-control" id="nim" >
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat</label>
+                                <input type="text" class="form-control" name="alamat" >
+                            </div>
+                            <div class="form-group">
+                                <label for="no">No.Hp</label>
+                                <input type="text" class="form-control" name="no" >
+>>>>>>> 2c7224ae436a8c1b3b5626b3c29db445290ed8ae
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
