@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','Form Dept')
+@section('title','Form Member')
 
 @section('content')
 <div class="content-wrapper">
@@ -8,7 +8,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-6"><h1>Member</h1></div>
-                    
+                    <div class="col-6">
+                        <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route("member.index") }}">List Member</a></li>
+                        </ol>
                 </div>
             </div>
         </div>
@@ -18,32 +22,47 @@
                     <h3 class="card-title">Form Member</h3>
                 </div>
                 <div class="card-body">
-                        <form>
+                        <form action={{ isset($data)
+                            ?route("member.update",[$data->id])
+                            :route("member.store") }}
+                            method="POST" autocomplete="off">
+                            @csrf
+                            @if (isset($data))
+                            @method("PUT")
+                            @endif 
+
                             <div class="form-group">
-                                <label for="namabuku">Nama</label>
-                                <input type="text" class="form-control" id="namabuku">
+                                <label for="nama">Nama</label>
+                                <input type="text" class="form-control" name="nama" value='{{ isset($data)?$data->nama:old("nama") }}'>
                             </div>
                             <div class="form-group">
-                                <label for="namapengarang">NIM</label>
-                                <input type="text" class="form-control" id="namapengarang" >
+                                <label for="nim">NIM</label>
+                                <input type="text" class="form-control" name="nim" value='{{ isset($data)?$data->nim:old("nim") }}'>
                             </div>
                             <div class="form-group">
-                                <label for="penerbit">Alamat</label>
-                                <input type="text" class="form-control" id="penerbit" >
+                                <label for="alamat">Alamat</label>
+                                <input type="text" class="form-control" name="alamat" value='{{ isset($data)?$data->alamat:old("alamat") }}' >
                             </div>
                             <div class="form-group">
-                                <label for="penerbit">No.Hp</label>
-                                <input type="text" class="form-control" id="penerbit" >
+                                <label for="no">No.Hp</label>
+                                <input type="text" class="form-control" name="no" value='{{ isset($data)?$data->no:old("no") }}' >
                             </div>
                             <div class="form-group">
-                                <label for="penerbit">Email</label>
-                                <input type="text" class="form-control" id="penerbit" >
+                                <label for="email">Email</label>
+                                <input type="email"
+                                    class="form-control @error("email") is-invalid @enderror"
+                                    name="email" value='{{ isset($data)?$data->email:old("email") }}'>
+                                @error("email")
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
                             <div class="form-group float-right">
                                     <button type="submit" class="btn btn-success">
                                         <i class="fa fa-save"></i> Simpan
                                     </button>
-                                    <a href="listbuku" class="btn btn-danger">
+                                    <a href="{{ route("member.index") }}" class="btn btn-danger">
                                         <i class="fa fa-arrow-left"></i> Batal
                                     </a>
                                 </div>

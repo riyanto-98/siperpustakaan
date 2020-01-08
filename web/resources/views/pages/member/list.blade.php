@@ -29,7 +29,7 @@
             </div>
             <div class="card-body">
                 <div class="float-right mb-2">
-                    <a href="formmember" class="btn btn-success">
+                    <a href="{{ route("member.create") }}" class="btn btn-success">
                         <i class="fa fa-plus"></i> Tambah</a>
                 </div>
                 <table class="table table-bordered">
@@ -41,36 +41,37 @@
                             <th>Alamat</th>
                             <th>No.HP</th>
                             <th>Email</th>
-                            <th colspan=3>Action</th>
+                            <th colspan=2>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
-                            <tr>
-                                <td>1</td>
-                                <td>Udin</td>
-                                <td>1614121576</td>
-                                <td>Jl.gatsu</td>
-                                <td>0822117788</td>
-                                <td>udin@gmail.com</td>
-                                <td><a href="#" class="btn btn-info btn-block"><i class="fa fa-redo"></i> Reset</a></td>
-                                <td><a href="#" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Rubah</a></td>
-                                <td>
-                                    <form action="#"
-                                        method="POST">
-                                        @method("delete")
-                                        @csrf
-                                        <button type="submit"
-                                            class="btn btn-danger btn-block">
-                                            <i class="fa fa-trash"></i> Hapus
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        
+                        @foreach ($data as $item)
+                        <tr>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nim }}</td>
+                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->no }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td><a href="{{ route("member.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Rubah</a></td>
+                            <td>
+                                <form action="{{ route("member.destroy",[$item->id]) }}"
+                                    method="POST">
+                                    @method("delete")
+                                    @csrf
+                                    <button type="submit"
+                                        class="btn btn-danger btn-block">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                         @endforeach
                     </tbody>
                 </table>
-                
+                <div class="float-right mt-2">
+                    {{ $data ->links() }}
+                </div>
             </div>
         </div>
 

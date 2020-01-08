@@ -63,7 +63,7 @@ class BukuController extends Controller
     {
         $data = Buku::find($id);
         
-        return view("pages.buku.list",compact("data"));
+        return view("pages.buku.form",compact("data"));
     }
 
     /**
@@ -84,19 +84,19 @@ class BukuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buku $buku)
+    public function update(Request $request,$id)
     {
         $request->validate([
             "namabuku" => "required|max:100",
             "namapengarang" => "required|max:100",
             "penerbit" => "required|max:100",
             "genre" => "required|max:100",
-            "jumlah" => "required|max:100",
+            "jumlah" => "required|max:100"
 
 
         ]);
 
-        Buku::where("id",$buku->id)
+        Buku::where("id",$id)
                 ->update($request->except(["_token","_method"]));
 
         $request->session()->flash("info","Berhasil Rubah Data Buku");

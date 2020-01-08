@@ -25,6 +25,11 @@ Route::middleware("auth")->group(function () {
 
     Route::resource('buku', 'BukuController');
 
+    Route::resource('penerbit', 'PenerbitController');
+
+    Route::resource('genre', 'GenreController');
+
+    Route::resource('member', 'MemberController');
 });
 
 Route::get("/login",function(){
@@ -49,28 +54,4 @@ Route::get('listrequest', function () {
 
 Route::get('request', function () {
     return view('pages.Request.request');
-});
-
-Route::get('listgenre', function () {
-    return view('pages.genre.list');
-});
-
-Route::get('formgenre', function () {
-    return view('pages.genre.form');
-});
-
-Route::get('formpenerbit', function () {
-    return view('pages.penerbit.form');
-});
-
-Route::get('listpenerbit', function () {
-    return view('pages.penerbit.list');
-});
-
-Route::get('listmember', function () {
-    return view('pages.member.list');
-});
-
-Route::get('formmember', function () {
-    return view('pages.member.form');
 });

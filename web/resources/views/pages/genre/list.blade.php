@@ -29,7 +29,7 @@
             </div>
             <div class="card-body">
                 <div class="float-right mb-2">
-                    <a href="formgenre" class="btn btn-success">
+                    <a href="{{ route("genre.create") }}" class="btn btn-success">
                         <i class="fa fa-plus"></i> Tambah</a>
                 </div>
                 <table class="table table-bordered">
@@ -37,21 +37,33 @@
                         <tr>
                             <th>No.</th>
                             <th>Genre</th>
-                            <th colspan=3>Action</th>
+                            <th colspan=2>Action</th>
                         </tr>
                     </thead>
-                    <thead>
+                    <tbody>
+                        @foreach ($data as $item)
                         <tr>
-                            <td>1</td>
-                            <td>Bahasa</td>
-                            <th colspan=3 >
-                                <button type="button" class="btn btn-info">Edit</button>
-                                <button type="button" class="btn btn-danger">Hapus</button>
-                            </th>
+                            <td>{{ $loop->iteration + (10*($data->currentPage()-1)) }}</td>
+                            <td>{{ $item->genre }}</td>
+                            <td><a href="{{ route("genre.show",[$item->id]) }}" class="btn btn-warning btn-block"><i class="fa fa-pencil-alt"></i> Rubah</a></td>
+                            <td>
+                                <form action="{{ route("genre.destroy",[$item->id]) }}"
+                                    method="POST">
+                                    @method("delete")
+                                    @csrf
+                                    <button type="submit"
+                                        class="btn btn-danger btn-block">
+                                        <i class="fa fa-trash"></i> Hapus
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
-                    </thead>
+                    @endforeach
+                    </tbody>
                 </table>
-               
+                <div class="float-right mt-2">
+                    {{ $data ->links() }}
+                </div>
             </div>
         </div>
 

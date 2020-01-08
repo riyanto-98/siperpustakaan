@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','Form Dept')
+@section('title','Form Genre')
 
 @section('content')
 <div class="content-wrapper">
@@ -8,7 +8,11 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-6"><h1>Genre</h1></div>
-                    
+                    <div class="col-6">
+                    <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="{{ route("home") }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route("genre.index") }}">List Genre</a></li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -18,16 +22,25 @@
                     <h3 class="card-title">Form Genre</h3>
                 </div>
                 <div class="card-body">
-                        <form>                                      
+                        <form action={{ isset($data)
+                            ?route("genre.update",[$data->id])
+                            :route("genre.store") }}   
+                            
+                method="POST" autocomplete="off">
+            @csrf
+            @if (isset($data))
+                @method("PUT")
+            @endif 
+
                             <div class="form-group">
-                                <label for="namabuku">Genre</label>
-                                <input type="text" class="form-control" id="namabuku">
+                                <label for="genre">Genre</label>
+                                <input type="text" class="form-control" name="genre" value='{{ isset($data)?$data->genre:old("genre") }}'>
                             </div>
                             <div class="form-group float-right">
                                     <button type="submit" class="btn btn-success">
                                         <i class="fa fa-save"></i> Simpan
                                     </button>
-                                    <a href="listbuku" class="btn btn-danger">
+                                    <a href="{{ route("genre.index") }}" class="btn btn-danger">
                                         <i class="fa fa-arrow-left"></i> Batal
                                     </a>
                                 </div>

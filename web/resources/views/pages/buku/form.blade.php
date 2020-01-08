@@ -34,32 +34,28 @@
             @endif
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Photo Buku</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" value='{{ isset($data)?$data->exampleFormControlFile1:old("exampleFormControlFile1") }}'>
                              </div>
                                 
                             <div class="form-group">
                                 <label for="namabuku">Nama Buku</label>
-                                <input type="text" class="form-control" name="namabuku">
+                                <input type="text" class="form-control" name="namabuku" value='{{ isset($data)?$data->namabuku:old("namabuku") }}'>
                             
                             </div>
                             <div class="form-group">
                                 <label for="namapengarang">Nama Pengarang</label>
-                                <input type="text" class="form-control" name="namapengarang" >
+                                <input type="text" class="form-control" name="namapengarang" value='{{ isset($data)?$data->namapengarang:old("namapengarang") }}'>
                             </div>
                             <div class="form-group">
                                     <label for="penerbit">Penerbit</label>
-                                    <select class="form-control" name="penerbit">
+                                    <select class="form-control" name="penerbit" value='{{ isset($data)?$data->penerbit:old("penerbit") }}'>
                                       <option>Erlangga</option>
-                                      <option>Filsafat & Psiologi</option>
-                                      <option>Agama</option>
-                                      <option>Sosial</option>
-                                      <option>Bahasa</option>
-                                      <option>Sains & Matematika</option>
+                                      <option>Kemendikbud</option>
                                     </select>
                             </div>
                             <div class="form-group">
                                     <label for="genre">Genre</label>
-                                    <select class="form-control" name="genre">
+                                    <select class="form-control" name="genre" value='{{ isset($data)?$data->genre:old("genre") }}'>
                                       <option>Umum</option>
                                       <option>Filsafat & Psiologi</option>
                                       <option>Agama</option>
@@ -70,7 +66,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="jumlah">Jumlah</label>
-                                <input type="text" class="form-control" name="jumlah" >
+                                <input type="text" class="form-control" name="jumlah" value='{{ isset($data)?$data->jumlah:old("jumlah") }}' >
                             </div>
                             <div class="form-group float-right">
                                     <button type="submit" class="btn btn-success">

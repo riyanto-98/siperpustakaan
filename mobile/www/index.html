@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <!-- <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"> -->
+    <link rel="stylesheet" href="css/simonika.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css">
+    <title>SIMonika Mobile</title>
+</head>
+
+<body>
+    <div data-role="page" id="login">
+        <div data-role="header">
+            <h1>Form Login</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div class="ui-field-contain">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="masukkan email user">
+            </div>
+            <div class="ui-field-contain">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="masukkan password user">
+            </div>
+            <a href="#listkerja" class="ui-btn">Login</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="listkerja">
+        <div data-role="panel" id="menupanel" data-position="left" data-display="overlay">
+            <ul data-role="listview">
+                <li>
+                    <h1>Menu</h1>
+                </li>
+                <li><a href="#genre">Genre</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#password">Ganti Password</a></li>
+                <li><a href="#login">Logout</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#menupanel" class="ui-btn-left
+                    ui-btn ui-btn-inline 
+                    ui-corner-all ui-icon-bars 
+                    ui-btn-icon-left">Menu</a>
+            <h1>List Peminjaman</h1>
+            <a href="#login" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-power
+                    ui-btn-icon-right">Logout</a>
+        </div>
+        <div class="ui-content">
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="cari buku" data-inset="true">
+                <li><a href="#hasil">
+                        <img src="img/Buku-horor-terseram-3-1.jpg" width="140px" height="150px">
+                        <h2>Hantu Penunggu Mall</h2>
+                        <p>Tanggal Pinjam :6/1/2019</p>
+                        <p>Tanggal Kembali : 13/1/2019</p>
+                        <span class="ui-li-count">Returned</span>
+
+                    </a></li>
+
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="profile">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Profile</h1>
+        </div>
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="nama">Nama</label>
+                <input type="text" name="nama">
+            </div>
+            <div class="ui-field-contain">
+                <label for="email">Email</label>
+                <input type="email" name="email">
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="password">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Ganti Password</h1>
+        </div>
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="passwordlama">Password Lama</label>
+                <input type="password" name="passwordlama">
+            </div>
+            <div class="ui-field-contain">
+                <label for="passwordbaru">Password Baru</label>
+                <input type="password" name="passwordbaru">
+            </div>
+            <div class="ui-field-contain">
+                <label for="konfirmpassword">Konfirm Password</label>
+                <input type="password" name="konfirmpassword">
+            </div>
+            <button class="ui-btn">Simpan</button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="genre">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+
+            <h1>Genre</h1>
+        </div>
+        <div>
+            <div class="ui-content">
+                <ul data-role="listview">
+                    <li><a href="#horor">
+                            <h2>Horor</h2>
+                        </a></li>
+
+                </ul>
+            </div>
+            <div class="ui-content">
+                <ul data-role="listview">
+                    <li><a href="#pendidikan">
+                            <h2>Pendidikan</h2>
+                        </a></li>
+
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h3>STMIK IBBI</h3>
+    </div>
+    </div>
+
+    <div data-role="page" id="horor">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Horor</h1>
+        </div>
+
+        <div>
+            <a href="#test"> <img src="img/Buku-horor-terseram-3-1.jpg" width="240px" height="150px"></a>
+            <h3>hantu Penunggu mall</h3>
+        </div>
+
+        <div>
+            <a href="#test"> <img src="img/Buku-horor-terseram-3-1.jpg" width="240px" height="150px"></a>
+            <h3>hantu Penunggu mall</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="pendidikan">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Pendidikan</h1>
+        </div>
+        <div class="ui-content">
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="cari buku" data-inset="true">
+                <li><a href="#biologi">
+                        <img src="img/7Biologi-BUKU-SISWA-XI-2-Ber-SK-HT2018.jpg" width="140px" height="150px">
+                        <h2>Biologi</h2>
+                    </a>
+                </li>
+
+                <li><a href="#biologi">
+                        <img src="img/sejarah.jpg" width="140px" height="150px">
+                        <h2>Sejarah</h2>
+
+                    </a></li>
+            </ul>
+
+
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="test">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Horor</h1>
+        </div>
+        <div>
+            <a href="#test"> <img src="img/Buku-horor-terseram-3-1.jpg" width="240px" height="150px"></a>
+            <h1>Hantu Penunggu Mall</h1>
+            <ul>
+                <li> Pengarang = anto</li>
+                <li> Penerbit = erlangga</li>
+                <li> Tahun Tterbit = 2010</li>
+            </ul>
+            <button class="ui-btn"><a href="#pesan"> Pesan</a></button>
+        </div>
+    </div>
+
+    <div data-role="page" id="biologi">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Pendidikan</h1>
+        </div>
+        <ul>
+            <li>
+                <div class="ui-content">
+                    <div class="ui-field-contain">
+                        <a href="biologi"> <img src="img/7Biologi-BUKU-SISWA-XI-2-Ber-SK-HT2018.jpg" width="240px"
+                                height="150px"></a>
+                        <div>
+                            <h1>Biologi</h1>
+
+                            <div class="ui-content">
+                                <div class="ui-field-contain">
+                                    <label for="passwordlama">Penulis</label>
+                                    <input type="password" name="passwordlama" placeholder="Budi">
+                                </div>
+
+                                <div class="ui-field-contain">
+                                    <label for="passwordlama">Penerbit</label>
+                                    <input type="password" name="passwordlama" placeholder="Erlangga">
+                                </div>
+
+                                <div class="ui-field-contain">
+                                    <label for="passwordlama">Tahun Terbit</label>
+                                    <input type="password" name="passwordlama" placeholder="2010">
+                                </div>
+
+                                <div class="ui-field-contain">
+                                    <label for="passwordlama">Tebal Buku</label>
+                                    <input type="password" name="passwordlama" placeholder="98 Halaman">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="ui-btn"><a href="#pesan"> Pesan</a></button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div data-role="page" id="pesan">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Pinjam Buku</h1>
+            <h2>Biologi</h2>
+        </div>
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="passwordlama">Tanggal Pinjam :</label>
+                <input type="password" name="passwordlama" placeholder="08 Januari 2020">
+            </div>
+            <div class="ui-field-contain">
+                <label for="passwordbaru">Tanggal Kembali :</label>
+                <input type="password" name="passwordlama" placeholder="15 Januari 2020">
+
+            </div>
+
+
+            <button class="ui-btn"> <a href="#histori"> Simpan </a></button>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="histori">
+        <div data-role="panel" id="menupanel" data-position="left" data-display="overlay">
+            <ul data-role="listview">
+                <li>
+                    <h1>Menu</h1>
+                </li>
+                <li><a href="#genre">Genre Buku</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#password">Ganti Password</a></li>
+                <li><a href="#login">Logout</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#menupanel" class="ui-btn-left
+                    ui-btn ui-btn-inline 
+                    ui-corner-all ui-icon-bars 
+                    ui-btn-icon-left">Menu</a>
+            <h1>List Buku</h1>
+            <a href="#login" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all ui-icon-power
+                    ui-btn-icon-right">Logout</a>
+        </div>
+        <div class="ui-content">
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="cari Buku" data-inset="true">
+                <li><a href="#detailbuku">
+                        <img src="img/7Biologi-BUKU-SISWA-XI-2-Ber-SK-HT2018.jpg" width="240px" height="150px">
+                        <h2>Biologi </h2>
+                        <p>Tanggal Pinjam 08/01/2020</p>
+                        <p>Tanggal Kembali 15/01/2020</p>
+                        <span class="ui-li-count">Pending</span>
+                    </a></li>
+                <li><a href="#hasil">
+                        <img src="img/Buku-horor-terseram-3-1.jpg" width="140px" height="150px">
+                        <h2>Hantu Penunggu Mall</h2>
+                        <p>Tanggal Pinjam :6/1/2019</p>
+                        <p>Tanggal Kembali : 13/1/2019</p>
+                        <span class="ui-li-count">Returned</span>
+
+                    </a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h3>STMIK IBBI</h3>
+        </div>
+    </div>
+
+    <div data-role="page" id="detailbuku">
+        <div data-role="header">
+            <a href="" data-rel="back">Back</a>
+            <h1>Detail Buku</h1>
+            <a href="#histori" class="ui-btn-right
+                    ui-btn ui-btn-inline
+                    ui-corner-all">Selesai</a>
+        </div>
+        <ul data-role="listview">
+            <img src="img/7Biologi-BUKU-SISWA-XI-2-Ber-SK-HT2018.jpg" width="100%" height="450px">
+        </ul>
+        <div class="ui-content">
+            <div class="ui-field-contain">
+                <label for="passwordlama">Nama Buku</label>
+                <input type="password" name="passwordlama" placeholder="Biologi">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Genre</label>
+                <input type="password" name="passwordlama" placeholder="Pendidikan">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Penulis</label>
+                <input type="password" name="passwordlama" placeholder="Budi">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Penerbit</label>
+                <input type="password" name="passwordlama" placeholder="Erlangga">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Tahun Terbit</label>
+                <input type="password" name="passwordlama" placeholder="2010">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Tebal Buku</label>
+                <input type="password" name="passwordlama" placeholder="98 Halaman">
+            </div>
+
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Tanggal Pinjam</label>
+                <input type="password" name="passwordlama" placeholder="8 Januari 2020">
+            </div>
+
+            <div class="ui-field-contain">
+                <label for="passwordlama">Tanggal Kembali</label>
+                <input type="password" name="passwordlama" placeholder="15 Januari 2020">
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</body>
+
+</html>
